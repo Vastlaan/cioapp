@@ -91,3 +91,14 @@ export const TextBold = styled.p`
   text-align: ${(p) => (p.align ? p.align : "center")};
   font-weight: 600;
 `;
+export const TextItalic = styled.p`
+  margin: ${(p) => (p.margin ? p.margin : "0")};
+  font-size: ${(p) => (p.size ? p.size : "2.2rem")};
+  font-family: ${fonts.para};
+  font-style: italic;
+  letter-spacing: 0.2rem;
+  color: ${(p) => (p.color ? p.color : "var(--color-grey-3)")};
+  max-width: ${(p) => (p.maxWidth ? p.maxWidth : "65rem")};
+  text-align: ${(p) => (p.align ? p.align : "center")};
+  font-weight: 500;
+`;

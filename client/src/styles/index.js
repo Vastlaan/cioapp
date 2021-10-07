@@ -10,6 +10,7 @@ import {
   Heading4,
   Text,
   TextBold,
+  TextItalic,
 } from "./typography";
 
 export {
@@ -33,4 +34,5 @@ export {
   Heading4,
   Text,
   TextBold,
+  TextItalic,
 };

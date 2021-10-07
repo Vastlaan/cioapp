@@ -25,7 +25,7 @@ export default function NavigationComponent() {
               })
             }
           >
-            <Flags.GB title="English Version" width="48" />
+            <Flags.GB title="English Version" width="42" />
           </ButtonLang>
         ) : (
           <ButtonLang
@@ -36,7 +36,7 @@ export default function NavigationComponent() {
               })
             }
           >
-            <Flags.NL title="Dutch Version" width="48" />
+            <Flags.NL title="Dutch Version" width="42" />
           </ButtonLang>
         )}
       </Container>
