@@ -11,6 +11,7 @@ import {
   TextBold,
 } from "../../styles";
 import { BiDownload, BiError, BiSmile } from "react-icons/bi";
+import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
 import ReactLoading from "react-loading";
 
 export default function DownloadComponent() {
@@ -20,6 +21,8 @@ export default function DownloadComponent() {
 
   const [email, setEmail] = useState("");
   const [veryficationCode, setVeryficationCode] = useState("");
+  const [blobImage, setBlobImage] = useState(null);
+  const [isPreviewFullScreen, setPreviewFullScreen] = useState(false);
 
   const [pending, setPending] = useState(false);
   const [error, setError] = useState({});
@@ -54,6 +57,7 @@ export default function DownloadComponent() {
           `https://api.andtitles.nl/?id=${data.user.fileUrl}`
         );
         const blob = await photoResponse.blob();
+        setBlobImage(URL.createObjectURL(blob));
         download(
           blob,
           `${data.user.firstName}_${data.user.lastName}_AND_Digital_photo.jpg`
@@ -139,9 +143,23 @@ export default function DownloadComponent() {
             <Close type="button" onClick={() => setSuccess(false)}>
               X
             </Close>
-            <BiSmile />
             <Text color="white">{pageData.downloads_form_success}</Text>
           </Success>
+        )}
+        {blobImage && (
+          <Preview isFullScreen={isPreviewFullScreen}>
+            <button
+              type="button"
+              onClick={() => setPreviewFullScreen((prevState) => !prevState)}
+            >
+              {isPreviewFullScreen ? (
+                <AiOutlineFullscreenExit />
+              ) : (
+                <AiOutlineFullscreen />
+              )}
+            </button>
+            <img src={blobImage} alt="your photo" />
+          </Preview>
         )}
       </Form>
     </Container>
@@ -158,7 +176,7 @@ const Container = styled.section`
 
 const Form = styled.form`
   margin: 0 auto;
-  padding: 4.7rem;
+  padding: 4.7rem 1.9rem;
   min-width: 37rem;
   display: flex;
   flex-direction: column;
@@ -168,7 +186,7 @@ const Form = styled.form`
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   scroll-margin: 2.7rem;
 
-  ${respond("m", "min-width: 45rem;")}
+  ${respond("m", "min-width: 45rem;padding: 4.7rem;")}
 `;
 
 const Error = styled.small`
@@ -211,4 +229,51 @@ const Close = styled.button`
   right: 0.9rem;
   font-size: 1.4rem;
   color: white;
+`;
+
+const Preview = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: ${(p) => (p.isFullScreen ? "0" : "2.7rem auto")};
+  width: ${(p) => (p.isFullScreen ? "100vw" : "100%")};
+  height: ${(p) => (p.isFullScreen ? "100vh" : "30rem")};
+  position: ${(p) => (p.isFullScreen ? "fixed" : "relative")};
+  inset: 0;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+
+  img {
+    width: ${(p) => (p.isFullScreen ? "100%" : "100%")};
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+  button {
+    position: absolute;
+    top: 1.9rem;
+    right: 1.9rem;
+    background-color: ${(p) =>
+      p.isFullScreen ? "var(--color-secondary)" : "rgba(255, 255, 255, 0.3)"};
+    padding: 0rem;
+    font-size: 1.9rem;
+    letter-spacing: 0.1rem;
+    z-index: 9;
+    transition: all 0.3s;
+    width: 4.7rem;
+    height: 4.7rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :hover {
+      background-color: var(--color-secondary);
+    }
+
+    svg {
+      font-size: 3.7rem;
+      color: ${(p) => (p.isFullScreen ? "white" : "white")};
+    }
+  }
 `;
