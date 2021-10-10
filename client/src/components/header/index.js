@@ -29,6 +29,8 @@ export default function HeaderComponent({
       }
     };
 
+    handleResize();
+
     window.addEventListener("resize", handleResize, false);
 
     return () => window.removeEventListener("resize", handleResize, false);
