@@ -98,7 +98,7 @@ export default function DownloadComponent() {
           )}
         </Field>
         <Field>
-          <label htmlFor="email">Verification Code:</label>
+          <label htmlFor="email">Verificatie Code:</label>
           <input
             type="text"
             name="veryfication_code_input"
@@ -129,12 +129,12 @@ export default function DownloadComponent() {
                 height={19}
                 width={43}
               />
-              Please Wait...
+              Wachten A.u.b...
             </>
           ) : (
             <>
               <BiDownload />
-              Download Photo
+              Download Fotos
             </>
           )}
         </ButtonPrimary>

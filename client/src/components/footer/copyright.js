@@ -6,7 +6,7 @@ export default function CopyrightComponent() {
     <Copyright>
       <p>
         &copy; {new Date().getFullYear()} Copyright{" "}
-        <a href="https://michalantczak.com">AND Digital</a> All rights reserved.
+        <a href="https://and.digital">AND Digital</a> All rights reserved.
       </p>
     </Copyright>
   );

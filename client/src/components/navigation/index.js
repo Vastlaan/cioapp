@@ -16,7 +16,7 @@ export default function NavigationComponent() {
       <Container>
         <Logo />
 
-        {state.language === "nl" ? (
+        {/* {state.language === "nl" ? (
           <ButtonLang
             onClick={() =>
               dispatch({
@@ -38,7 +38,7 @@ export default function NavigationComponent() {
           >
             <Flags.NL title="Dutch Version" width="42" />
           </ButtonLang>
-        )}
+        )} */}
       </Container>
     </Navigation>
   );
@@ -46,7 +46,8 @@ export default function NavigationComponent() {
 
 const Navigation = styled.nav`
   width: 100%;
-  border-bottom: 1px solid var(--color-grey-2);
+  background-color: white;
+  border-bottom: 1px solid #ddd;
 `;
 const Container = styled.div`
   display: flex;

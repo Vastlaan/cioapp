@@ -10,14 +10,14 @@ import SurveyPage from "./pages/survey_page";
 import InsturctionsPage from "./pages/instructions_page";
 import HealthyHacks from "./pages/healthy_hacks_page";
 import EmergencyPage from "./pages/emergency_page";
-import { en } from "./data";
+import { nl } from "./data";
 
 function App() {
   const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
     if (/^en\b/.test(window.navigator.language)) {
-      dispatch({ type: "SET_DATA", payload: { data: en, language: "en" } });
+      dispatch({ type: "SET_DATA", payload: { data: nl, language: "nl" } });
     }
   }, [dispatch]);
 

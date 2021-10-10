@@ -20,22 +20,23 @@ export const en = {
 };
 
 export const nl = {
-  landing_header_title:
-    "Bedankt voor je enthousiaste deelname aan het CIO event",
-  landing_header_category: "AND Digital CIO Event",
-  landing_header_description: `Het was leuk je te ontmoeten op het CIO evenement vorige week. We zijn van mening dat we met de deelname van mensen zoals jij dit evenement met succes hebben kunnen leiden.`,
+  landing_header_title: "AND Digital maakt NederlAND digitaal",
+  landing_header_category: "FFWD INSIGHTS 1 OKTOBER 2021",
+  landing_header_description: `Hallo, wij zijn AND Digital. Niet nieuw, maar wel ‘A New Kid in Town’. Althans, in Nederland. In dit voorjaar zijn we vanuit ons nieuwe kantoor in Amsterdam gestart met de eerste Club buiten de UK. Een spannend avontuur met grote ambities; momenteel hebben we ruim 40 digital experts en in 2025 verwachten we 500 mensen in 5 Clubs aan de digitale uitdagingen van Nederlandse klanten te hebben werken.`,
   landing_header_btn_link: "/",
-  landing_header_btn_text: "Download Photo",
+  landing_header_btn_text: "Download Fotos",
 
   downloads_form_title: "Foto-aanvraagformulier",
   downloads_form_description:
     "Vul uw e-mailadres en verificatiecode in die u heeft ontvangen.",
   downloads_form_success: "je foto is succesvol gedownload",
 
-  landing_motivation: `We zijn een technologiebedrijf dat zich richt op het versnellen van digitale levering. Dat doen we door zowel betere producten als sterkere teams te bouwen.`,
+  landing_motivation: `Wij zijn benieuwd te horen of je nieuwe foto’s bevallen!
+  Met vriendelijke groet,
+  `,
 
   social_media_cat: "social media",
-  social_media_title: "Volg Ons op Social Media",
+  social_media_title: "Volg AND DIGITAL op Social Media",
   social_media_description:
     "We zijn een hardwerkende gemeenschap van doeners en dromers, verenigd door een liefde voor technologie en een verlangen om dingen anders te doen",
 };

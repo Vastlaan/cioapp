@@ -10,7 +10,7 @@ export const Heading1 = styled.h1`
   font-size: 3.7rem;
   font-weight: 600;
   line-height: 1.3;
-  max-width: ${(p) => (p.wide ? p.wide : "65rem")};
+  max-width: ${(p) => (p.wide ? p.wide : "70rem")};
   text-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
   color: ${(p) => (p.color ? p.color : "var(--color-grey-4)")};
   text-align: ${(p) => (p.align ? p.align : "left")};
@@ -71,6 +71,27 @@ export const Heading4 = styled.p`
   }
 `;
 
+export const Heading5 = styled.h4`
+  margin: ${(p) => (p.margin ? p.margin : "0")};
+  font-size: 2.7rem;
+  font-weight: 600;
+  color: ${(p) => (p.color ? p.color : "var(--color-primary)")};
+  line-height: 1.3;
+  letter-spacing: 0.15rem;
+  text-align: ${(p) => (p.align ? p.align : "center")};
+  max-width: 45rem;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: -1.4rem;
+    height: 2.7rem;
+    width: 0.3rem;
+    background-color: var(--color-primary);
+  }
+`;
+
 // Paragraphs
 
 export const Text = styled.p`
@@ -84,21 +105,18 @@ export const Text = styled.p`
 
 export const TextBold = styled.p`
   margin: ${(p) => (p.margin ? p.margin : "0")};
-  font-size: ${(p) => (p.size ? p.size : "2.2rem")};
+  font-size: ${(p) => (p.size ? p.size : "1.9rem")};
   font-family: ${fonts.heading};
-  color: ${(p) => (p.color ? p.color : "var(--color-grey-3)")};
-  max-width: ${(p) => (p.maxWidth ? p.maxWidth : "65rem")};
+  color: ${(p) => (p.color ? p.color : "#666")};
+  max-width: ${(p) => (p.maxWidth ? p.maxWidth : "70rem")};
   text-align: ${(p) => (p.align ? p.align : "center")};
   font-weight: 600;
 `;
 export const TextItalic = styled.p`
   margin: ${(p) => (p.margin ? p.margin : "0")};
-  font-size: ${(p) => (p.size ? p.size : "2.2rem")};
-  font-family: ${fonts.para};
+  font-size: 1.9rem;
   font-style: italic;
+  font-weight: 300;
   letter-spacing: 0.2rem;
-  color: ${(p) => (p.color ? p.color : "var(--color-grey-3)")};
-  max-width: ${(p) => (p.maxWidth ? p.maxWidth : "65rem")};
-  text-align: ${(p) => (p.align ? p.align : "center")};
-  font-weight: 500;
+  color: ${(p) => (p.color ? p.color : "var(--color-grey-1)")};
 `;

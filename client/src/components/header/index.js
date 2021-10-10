@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {
   Heading1,
@@ -19,6 +18,22 @@ export default function HeaderComponent({
   btnText,
   image,
 }) {
+  const [isMobile, setIsMobile] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobile(false);
+      } else {
+        setIsMobile(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize, false);
+
+    return () => window.removeEventListener("resize", handleResize, false);
+  }, []);
+
   const scrollToDownloadSection = () => {
     const section = document.querySelector("#download_section");
     section.scrollIntoView({
@@ -30,10 +45,12 @@ export default function HeaderComponent({
 
   return (
     <Header image={image}>
-      <Heading4>{category}</Heading4>
-      <Heading1 margin=".9rem 0 0 0">{title}</Heading1>
+      <Heading4 align={isMobile ? "center" : "left"}>{category}</Heading4>
+      <Heading1 align={isMobile ? "center" : "left"} margin=".9rem 0 0 0">
+        {title}
+      </Heading1>
 
-      <TextBold margin="3.7rem 0" align="left">
+      <TextBold margin="2.7rem 0 4.7rem 0" align={isMobile ? "center" : "left"}>
         {description}
       </TextBold>
 
@@ -55,12 +72,12 @@ const Header = styled.header`
   min-height: 60vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 6.7rem 1.4rem;
-  border-bottom: 1px solid var(--color-grey-2);
-  ${() => respond("m", "padding: 8.7rem 6.7rem;")};
+  padding: 4.7rem 1.4rem;
+
+  ${() => respond("m", "padding: 8.7rem 6.7rem; align-items: flex-start;")};
 `;
 const ImageContainer = styled.div`
   display: none;
@@ -68,7 +85,7 @@ const ImageContainer = styled.div`
   width: 45rem;
   position: absolute;
   right: 0;
-  top: 10%;
+  top: 15%;
   z-index: -1;
 
   ${respond("m", "display: flex;")}

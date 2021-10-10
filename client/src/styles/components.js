@@ -43,3 +43,27 @@ export const Field = styled.div`
     color: ${(p) => p.theme.secondary};
   }
 `;
+export const ImageStory = styled.div`
+  margin: 2.7rem;
+  height: 30rem;
+  width: 25rem;
+  position: relative;
+  box-shadow: 0 0 1.4rem rgba(240, 180, 91, 0.3);
+  img {
+    position: relative;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2.7rem;
+    left: -2.7rem;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(240, 180, 91, 0.4);
+    z-index: 1;
+  }
+`;
