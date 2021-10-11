@@ -10,8 +10,7 @@ import {
   respond,
   TextBold,
 } from "../../styles";
-import { BiDownload, BiError, BiSmile } from "react-icons/bi";
-import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
+import { BiDownload, BiError } from "react-icons/bi";
 import ReactLoading from "react-loading";
 
 export default function DownloadComponent() {
@@ -21,8 +20,6 @@ export default function DownloadComponent() {
 
   const [email, setEmail] = useState("");
   const [veryficationCode, setVeryficationCode] = useState("");
-  const [blobImage, setBlobImage] = useState(null);
-  const [isPreviewFullScreen, setPreviewFullScreen] = useState(false);
 
   const [pending, setPending] = useState(false);
   const [error, setError] = useState({});
@@ -57,10 +54,10 @@ export default function DownloadComponent() {
           `https://api.andtitles.nl/?id=${data.user.fileUrl}`
         );
         const blob = await photoResponse.blob();
-        setBlobImage(URL.createObjectURL(blob));
+
         download(
           blob,
-          `${data.user.firstName}_${data.user.lastName}_AND_Digital_photo.jpg`
+          `${data.user.firstName}_${data.user.lastName}_AND_Digital_photos.zip`
         );
         setPending(false);
         setSuccess(true);
@@ -145,21 +142,6 @@ export default function DownloadComponent() {
             </Close>
             <Text color="white">{pageData.downloads_form_success}</Text>
           </Success>
-        )}
-        {blobImage && (
-          <Preview isFullScreen={isPreviewFullScreen}>
-            <button
-              type="button"
-              onClick={() => setPreviewFullScreen((prevState) => !prevState)}
-            >
-              {isPreviewFullScreen ? (
-                <AiOutlineFullscreenExit />
-              ) : (
-                <AiOutlineFullscreen />
-              )}
-            </button>
-            <img src={blobImage} alt="your photo" />
-          </Preview>
         )}
       </Form>
     </Container>

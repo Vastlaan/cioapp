@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Img1 from "../../img/jeroen.jpg";
-import Img2 from "../../img/hans.jpg";
+import Img2 from "../../img/jens.jpg";
 import { respond, fonts, TextBold, FlexCol, Heading3 } from "../../styles";
 import { BiMailSend } from "react-icons/bi";
 import { SiGooglecalendar } from "react-icons/si";
@@ -9,25 +9,25 @@ import { SiGooglecalendar } from "react-icons/si";
 const data = [
   {
     id: "person-1",
-    img: Img1,
-    name: "Jeroen Kleinhoven",
-    function: "Benelux Executive AND Metalhead",
+    img: Img2,
+    name: "Jens van Kerkvoort",
+    function: "Client Partner Lead",
     description:
       "Stuur mij een e-mail of plan gelijk 30 minuten gesprek via Google Calendar.",
-    mail: "hans.smans@and.digital",
+    mail: "jens.vankerkvoort@and.digital",
     calendar:
-      "https://calendar.google.com/calendar/u/0/r/eventedit?overrides=%5Bnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5B%22jeroen.kleinhoven%40and.digital%22%5D%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%5D",
+      "https://calendar.google.com/calendar/u/0/r/eventedit?overrides=%5Bnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5B%22jens.vankerkvoort%40and.digital%22%5D%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%5D",
   },
   {
     id: "person-2",
-    img: Img2,
-    name: "Hans Smans",
-    function: "Marketing Manager (Benelux & Scotland)",
+    img: Img1,
+    name: "Jeroen Kleinhoven",
+    function: "Benelux Executive",
     description:
       "Stuur mij een e-mail of plan gelijk 30 minuten gesprek via Google Calendar.",
     mail: "jeroen.kleinhoven@and.digital",
     calendar:
-      "https://calendar.google.com/calendar/u/0/r/eventedit?overrides=%5Bnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5B%22hans.smans%40and.digital%22%5D%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%5D",
+      "https://calendar.google.com/calendar/u/0/r/eventedit?overrides=%5Bnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5B%22jeroen.kleinhoven%40and.digital%22%5D%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%5D",
   },
 ];
 
@@ -38,11 +38,13 @@ export default function PersonelComponent() {
         <Heading3 color="#222" align="center">
           Nieuwsgierig om eens <span>meer</span> te horen?
         </Heading3>
+        <Heading3 color="#222" align="center"></Heading3>
 
         <TextBold color="#222" align="center" margin="2.7rem 0 1.9rem 0">
-          Mail ons dan of plan gelijk 30 minuten gesprek. Wij zijn benieuwd te
+          Mail ons dan of boek een introductie gesprek. Wij zijn benieuwd te
           horen of je nieuwe foto’s bevallen!
         </TextBold>
+
         <TextBold color="#222" align="center">
           Met vriendelijke groet,
         </TextBold>

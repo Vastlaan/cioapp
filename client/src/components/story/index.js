@@ -24,9 +24,9 @@ export default function AboutComponent() {
           Upscale je <span>Digitaal</span>
         </Heading3>
         <TextBold maxWidth="55rem" align="left">
-          Wij gaan graag in gesprek te vertellen hoe we klanten helpen met het
-          upgrade van hun digitale ambities; en vooral het versnellen van jullie
-          digitale vaardigheden.
+          Wij gaan graag in gesprek om te vertellen hoe we klanten helpen met
+          het upgraden van hun digitale ambities en het versnellen van de
+          digitale vaardigheden van het bedrijf.
         </TextBold>
       </Content>
     </About>
