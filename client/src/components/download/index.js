@@ -55,17 +55,17 @@ export default function DownloadComponent() {
         );
         const blob = await photoResponse.blob();
 
-        download(
-          blob,
-          `${data.user.firstName}_${data.user.lastName}_AND_Digital_photos.zip`
-        );
+        download(blob, `${data.user.firstName}_${data.user.lastName}`);
         setPending(false);
         setSuccess(true);
       }
     } catch (e) {
       setPending(false);
-      setError({ field: "general", message: e });
-      console.error("Error", e);
+      setError({
+        field: "general",
+        message: "Ups, something went wrong, please try again later.",
+      });
+      console.error("Error", e.message);
     }
   };
 
