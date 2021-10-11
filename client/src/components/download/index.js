@@ -39,7 +39,6 @@ export default function DownloadComponent() {
       });
 
       const data = await response.json();
-      console.log("Data", data);
 
       if (data.status === "error") {
         setPending(false);
@@ -55,7 +54,7 @@ export default function DownloadComponent() {
         );
         const blob = await photoResponse.blob();
 
-        download(blob, `${data.user.firstName}_${data.user.lastName}`);
+        download(blob, data.user.email);
         setPending(false);
         setSuccess(true);
       }

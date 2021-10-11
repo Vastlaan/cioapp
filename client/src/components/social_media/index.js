@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Heading3, Text, TextItalic } from "../../styles";
-import { GrInstagram, GrFacebook, GrLinkedin } from "react-icons/gr";
+import { GrTwitter, GrInstagram, GrLinkedin } from "react-icons/gr";
 
 export default function SocialMediaComponent({ cat, title, description }) {
   return (
@@ -11,22 +11,16 @@ export default function SocialMediaComponent({ cat, title, description }) {
       <Text>{description}</Text>
       <IconContainer>
         <Icon
-          href="https://www.facebook.com/anddigitaluk/"
-          aria-label="follow us on Facebook"
-        >
-          <GrFacebook color="#4267B2" />
-        </Icon>
-        <Icon
-          href="https://www.instagram.com/and.digital/"
-          aria-label="follow us on Instagream"
-        >
-          <GrInstagram color="#fb3958" />
-        </Icon>
-        <Icon
-          href="https://www.linkedin.com/company/and_digital/"
+          href="https://twitter.com/AND_nederland"
           aria-label="follow us on Twitter"
         >
-          <GrLinkedin color="skyblue" />
+          <GrTwitter color="skyblue" />
+        </Icon>
+        <Icon
+          href="https://www.linkedin.com/showcase/and-nederland/"
+          aria-label="follow us on LinkedIn"
+        >
+          <GrLinkedin color="#4267B2" />
         </Icon>
       </IconContainer>
     </Container>
