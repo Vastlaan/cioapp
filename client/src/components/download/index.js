@@ -54,7 +54,7 @@ export default function DownloadComponent() {
         );
         const blob = await photoResponse.blob();
 
-        download(blob, data.user.email);
+        download(blob, `${data.user.email}.zip`);
         setPending(false);
         setSuccess(true);
       }
